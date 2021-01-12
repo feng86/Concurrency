@@ -11,7 +11,7 @@ void fun(std::promise<std::string> pr, std::unique_ptr<int> uptr)
     pr.set_value("Message from thread.");
 }
 
-void main()
+int main()
 {
     std::unique_ptr<int> uptr(new int(10));
     std::promise<std::string> pr;
@@ -22,4 +22,6 @@ void main()
     std::string s = fut.get();
     std::cout << s << std::endl;
     th.join();
+ 
+    return 0;
 }

@@ -5,7 +5,7 @@
 #include <vector>
 #include <set>
 
-void main()
+int main()
 {
     std::set<std::thread::id> set;
 
@@ -28,4 +28,6 @@ void main()
             std::cout << "Thread reuse " << id << std::endl;
         set.insert(id);
     }     
+ 
+    return 0;
 }

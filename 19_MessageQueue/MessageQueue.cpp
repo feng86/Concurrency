@@ -32,11 +32,13 @@ private:
     deque<T> _messages;
 };
 
-void main()
+int main()
 {
     MessageQueue<int> queue;
     future<void> fut = async([&queue] { queue.send(44); });
     int i = queue.receive();
     cout << "Received: " << i << endl;
     fut.wait();
+
+    return 0;
 }

@@ -1,7 +1,7 @@
 #include <thread>
 #include <iostream>
 
-void main()
+int main()
 {
     std::thread t([]()
     {
@@ -9,4 +9,6 @@ void main()
     });
     std::cout << "Hello from main!\n";
     t.join();
+ 
+    return 0;
 }

@@ -56,7 +56,7 @@ public:
     }
 };
 
-void main()
+int main()
 {
     List list;
     std::list<future<void>> futures;
@@ -79,4 +79,6 @@ void main()
        list.pop();
     }
     cout << len << endl;
+
+    return 0;
 }

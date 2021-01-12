@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-#include <thread>
+#include <pthread.h>
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -21,7 +21,7 @@ std::vector<std::thread> spawn()
     return threads;
 }
 
-void main()
+int main()
 {
     std::vector<std::thread> threads;
 #if 1
@@ -39,4 +39,6 @@ void main()
     std::cout << "Hello from main!\n";
     for (auto & t : threads)
         t.join();
+
+    return 0;
  }

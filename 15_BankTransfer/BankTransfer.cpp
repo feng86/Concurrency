@@ -3,6 +3,7 @@
 #include <mutex>
 #include <iostream>
 #include <chrono>
+#include <vector>
 
 using namespace std;
 
@@ -52,7 +53,7 @@ public:
     void assertSolvent() const
     {
         if (_accts[0].balance() + _accts[1].balance() < _minBalance)
-            throw exception("Need bailout!");
+            throw exception("Need bailout!");// no matching function for call to ‘std::exception::exception(const char [14])’
     }
 };
 
@@ -79,7 +80,7 @@ void test()
         fut.get();
 }
 
-void main()
+int main()
 {
     try
     {
@@ -89,4 +90,6 @@ void main()
     {
         cout << e.what() << endl;
     }
+
+    return 0;
 }

@@ -15,7 +15,7 @@ struct Holder
     Counter * c;
 };
 
-void main()
+int main()
 {
     const Holder h(10);
     std::future<void> fut = std::async([](Holder const & h)
@@ -25,4 +25,6 @@ void main()
     std::cout << h.c->n << std::endl;
     fut.wait();
     std::cout << h.c->n << std::endl;
+ 
+    return 0;
 }

@@ -15,7 +15,7 @@ private:
     int _i;
 };
 
-void main()
+int main()
 {
     std::vector<std::thread> threads;
     for (int i = 0; i < 16; ++i)
@@ -25,4 +25,6 @@ void main()
     std::cout << "Hello from main!\n";
     for (auto & t: threads)
         t.join();
+  
+    return 0;
 }

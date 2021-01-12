@@ -1,13 +1,15 @@
 #include <thread>
 #include <future>
-#include <filesystem>
+#include <experimental/filesystem> //fatal error: filesystem: No such file or directory. no need 'experimental' fro gcc 8 ?
 #include <vector>
 #include <string>
 #include <iostream>
 
 // filesystem
 using namespace std::tr2::sys;
+//using namespace std::sys;
 using namespace std;
+using namespace std::experimental::filesystem
 
 vector<string> listDir(path const & dir)
 {
@@ -39,7 +41,7 @@ vector<string> listDirs(vector<path> const & paths)
     return allFiles;
 }
 
-void main()
+int main()
 {
     vector<path> paths;
     for (directory_iterator it("c:\\"); it != directory_iterator(); ++it)
@@ -50,5 +52,7 @@ void main()
 
     for (auto name : listDirs(paths))
         cout << name << endl;
+
+    return 0;
 }
 

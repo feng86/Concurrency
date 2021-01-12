@@ -3,6 +3,7 @@
 #include <mutex>
 #include <iostream>
 #include <chrono>
+#include <vector>
 
 using namespace std;
 
@@ -98,7 +99,7 @@ void test()
         fut.get();
 }
 
-void main()
+int main()
 {
     try
     {
@@ -108,4 +109,6 @@ void main()
     {
         cout << e.what() << endl;
     }
+
+    return 0;
 }

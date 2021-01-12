@@ -1,6 +1,6 @@
 #include <thread>
 #include <future>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -9,6 +9,7 @@
 // filesystem
 using namespace std::tr2::sys;
 using namespace std;
+using namespace std::experimental::filesystem;
 
 class FileMonitor
 {
@@ -68,7 +69,7 @@ void listDirs(vector<path> paths, FileMonitor & fileSink)
     }
 }
 
-void main()
+int main()
 {
     vector<path> paths;
     for (directory_iterator it("c:\\"); it != directory_iterator(); ++it)
@@ -79,5 +80,7 @@ void main()
 
     FileMonitor fileSink;
     listDirs(paths, fileSink);
+
+    return 0;
 }
 

@@ -12,7 +12,7 @@ void repeat(std::string & str, int n)
     }
 }
 
-void main()
+int main()
 {
     //    std::thread t(repeat, "blah!", 3);
     std::string str("blah!");
@@ -20,4 +20,6 @@ void main()
     std::cout << "[Hello from main!]";
     t.join();
     std::cout << std::endl << str;
+ 
+    return 0;
 }
