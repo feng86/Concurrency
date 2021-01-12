@@ -26,18 +26,18 @@ set(sub_dirs
     5_FunctionObject
     6_PassArgs
     7_Future
-    8_Except
-    9_Async
+    #8_Except
+    #9_Async
     10_BadPass
     10_Launch
     11_BadConst
-    12_FileList
-    13_FileMonitor
+    #12_FileList
+    #13_FileMonitor
     14_BankAccount
-    15_BankTransfer
-    16_BankDeadlock
-    17_FilePolling
-    18_Condition
+    #15_BankTransfer
+    #16_BankDeadlock
+    #17_FilePolling
+    #18_Condition
     19_MessageQueue
     20_AtomicityBug
 )
