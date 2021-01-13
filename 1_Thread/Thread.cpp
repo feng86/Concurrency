@@ -8,7 +8,11 @@ void threadFun()
 
 int main()
 {
-    std::thread t(threadFun);
+    // std::thread object takes a 
+    // callable object[function,lambda,functor,bind] and its arguments 
+    // as thread object's arguments
+    // https://en.cppreference.com/w/cpp/thread/thread
+    std::thread t(threadFun);  
     std::cout << "Hello from main!\n";
     t.join();
 
