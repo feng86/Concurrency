@@ -12,6 +12,9 @@ std::vector<std::thread> spawn()
     std::vector<std::thread> threads;
     for (int i = 0; i < 16; ++i)
     {
+        // std::thread itself halts,but it refers to a local variable 'i'
+        //  when spawn() returns 'i' disappears
+        //  caution for 'pass by reference to local variable' for std::thread
         threads.emplace_back([&]()
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(10 * i));
