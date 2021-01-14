@@ -24,9 +24,13 @@ int main()
     std::vector<std::thread> threads;
     for (int i = 0; i < 16; ++i)
     {
+	// pass variable arguments,so second template parameter(passed into callable object) 
+        //  for class std::thread is 'variadic template parameter'
         threads.emplace_back(FunObj(i),2);
     }
     std::cout << "Hello from main!\n";
+    //detach instead of join, makes new std::thread daemon thread.
+    // not be terminated when main thread ends
     for (auto & t: threads)
         t.join();
   
