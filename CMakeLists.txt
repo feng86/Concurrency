@@ -29,6 +29,7 @@ set(sub_dirs
     6_shared_memory_with_race
     6_shared_memory_with_race_but_std_move_to_recuse
     7_Future
+    7_Future_ref_promise
     #8_Except
     #9_Async
     10_BadPass
