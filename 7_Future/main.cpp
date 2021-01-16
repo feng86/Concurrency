@@ -41,3 +41,5 @@ int main()
 }
 // promise/future is template, T is element type that passed through promise/future
 // promise public data to channel,singal future to get,or future is blocked when on data is put in promise side.
+
+// pass a string(char * contained in a string) by move in communication channel,so input side and output side can see same char* address !!!
