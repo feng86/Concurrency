@@ -8,9 +8,11 @@ void fun(std::promise<std::string> && pr)
     try
     {
         std::cout << "Worker throwing.\n";
-        throw std::exception("Exception from thread.");
+        // /usr/include/c++/5/exception:63:5: note:   candidate expects 0 arguments, 1 provided
+        // throw std::exception(/*"Exception from thread."*/);
+        throw std::bad_exception(/*"Exception from thread."*/);
     }
-    catch (...)
+    catch (...)//all possible exception
     {
         pr.set_exception(std::current_exception());
     }
@@ -27,9 +29,9 @@ int main()
         std::string s = fut.get();
         std::cout << s << std::endl;
     }
-    catch (std::exception e)
+    catch (std::exception& e)
     {
-        std::cout << "Caught: " << e.what() << std::endl;
+        std::cout << "Caught: " << e.what() << std::endl;//Caught: std::bad_exception or Caught: std::exception
     }
     th.join();
  
