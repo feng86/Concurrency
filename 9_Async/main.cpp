@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 
+// use a normal function not a thread creation + thread function + promise/future + join !!!
+//  function returns(type) instead of passed element(type): same DataType
+// so no std::thread/join any more
 std::string fun(bool flag)
 {
     if (flag)
@@ -13,14 +16,16 @@ std::string fun(bool flag)
     else
     {
         std::cout << "Worker throwing.\n";
-        throw std::exception("Exception from thread.");
+        // throw std::exception("Exception from thread.");
+        throw std::exception(/*"Exception from thread."*/);
     }
     return "";
 }
 
 int main()
 {
-    std::future<std::string> fut = std::async(fun, true);
+    // std::future<std::string> fut = std::async(fun, true);
+    auto  fut = std::async(fun, true); //so no future/std::thread/join is bothered,but it's just syntax sugar
     std::cout << "Main receiving.\n";
     try
     {
