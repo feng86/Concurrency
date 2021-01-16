@@ -25,6 +25,8 @@ set(sub_dirs
     4_Bug
     5_FunctionObject
     6_PassArgs
+    6_shared_memory_with_no_race
+    6_shared_memory_with_race
     7_Future
     #8_Except
     #9_Async
