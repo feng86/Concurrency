@@ -27,6 +27,7 @@ set(sub_dirs
     6_PassArgs
     6_shared_memory_with_no_race
     6_shared_memory_with_race
+    6_shared_memory_with_race_but_std_move_to_recuse
     7_Future
     #8_Except
     #9_Async
