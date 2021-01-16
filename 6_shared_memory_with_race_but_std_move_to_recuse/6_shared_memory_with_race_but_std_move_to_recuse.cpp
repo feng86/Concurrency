@@ -47,3 +47,6 @@ int main(){
 // thread B creation(in thread main/A) --> thread B starts --(thread B access/write(through reference) shared memory)--> thread B ends --> thread A access/write(through reference) same memory --> thread B join(synchronization point)
 
 // =================> list has been moved from main thread to worker thread,so list in main thread is empty!!! NO print in main thread
+// shared resouces have ONLY "one single ower" for all piece of time; 
+// change ower time to time through std::move; move the "owership"
+// std::move unique shared_memory/resources from thread A to thread B, finally return the result/pass the shared resources from thread B to thread A through a "communication channel"(std::promise in input side of channel and std::future in output side of channel)
