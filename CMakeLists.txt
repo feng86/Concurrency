@@ -31,7 +31,7 @@ set(sub_dirs
     7_Future
     7_Future_ref_promise
     8_Except
-    #9_Async
+    9_Async
     10_BadPass
     10_Launch
     11_BadConst
