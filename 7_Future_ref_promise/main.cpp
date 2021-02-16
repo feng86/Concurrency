@@ -48,4 +48,4 @@ int main()
     return 0;
 }
 // promise/future is template, T is element type that passed through promise/future
-// promise public data to channel,singal future to get,or future is blocked when on data is put in promise side.
+// promise public data to channel,singal future to get,or future is blocked when no data is put in promise side.

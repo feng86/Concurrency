@@ -6,10 +6,10 @@
 #include <iostream>
 
 // filesystem
-using namespace std::tr2::sys;
+//using namespace std::tr2::sys;
 //using namespace std::sys;
 using namespace std;
-using namespace std::experimental::filesystem
+using namespace std::experimental::filesystem;
 
 vector<string> listDir(path const & dir)
 {

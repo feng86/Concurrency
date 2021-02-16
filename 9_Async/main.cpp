@@ -11,13 +11,13 @@ std::string fun(bool flag)
     if (flag)
     {
         std::cout << "Worker returning.\n";
-        return "Message from worker.";
+        return "Message from worker.";                      // return a std::string matching function return type
     }
     else
     {
         std::cout << "Worker throwing.\n";
         // throw std::exception("Exception from thread.");
-        throw std::exception(/*"Exception from thread."*/);
+        throw std::exception(/*"Exception from thread."*/); // std::exception is not std::string type ???
     }
     return "";
 }
@@ -25,7 +25,8 @@ std::string fun(bool flag)
 int main()
 {
     // std::future<std::string> fut = std::async(fun, true);
-    auto  fut = std::async(fun, true); //so no future/std::thread/join is bothered,but it's just syntax sugar
+    // std::async(launch::async/launch::deferred,&callable_object,args) //system choose prefered async or deferred when none is specified. callable_object: normal func/func pointer/lambda/functor
+    auto  fut = std::async(fun, false); //so no future/std::thread/join is bothered,but it's just syntax sugar
     std::cout << "Main receiving.\n";
     try
     {

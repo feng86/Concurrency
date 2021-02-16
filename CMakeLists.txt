@@ -32,8 +32,10 @@ set(sub_dirs
     7_Future_ref_promise
     8_Except
     9_Async
+    9_Async_with_void_function
     10_BadPass
     10_Launch
+    10_Launch_thread_reuse
     11_BadConst
     #12_FileList
     #13_FileMonitor
